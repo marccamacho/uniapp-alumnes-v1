@@ -1,0 +1,102 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$md-primary: (
+  50 : #e0f2f1,
+  100 : #b3e0db,
+  200 : #80cbc4,
+  300 : #4db6ac,
+  400 : #26a69a,
+  500 : #009688,
+  600 : #008e80,
+  700 : #008375,
+  800 : #00796b,
+  900 : #006858,
+  A100 : #97ffec,
+  A200 : #64ffe3,
+  A400 : #31ffda,
+  A700 : #18ffd5,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+
+$md-accent: (
+    50 : #fffae7,
+    100 : #fef3c2,
+    200 : #feec9a,
+    300 : #fee472,
+    400 : #fdde53,
+    500 : #fdd835,
+    600 : #fdd430,
+    700 : #fcce28,
+    800 : #fcc822,
+    900 : #fcbf16,
+    A100 : #ffffff,
+    A200 : #fffdf8,
+    A400 : #ffeec5,
+    A700 : #ffe7ac,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$uniapp-alumnes-v1-primary: mat.define-palette($md-primary);
+$uniapp-alumnes-v1-accent: mat.define-palette($md-accent, 500, 900, A100);
+
+// The warn palette is optional (defaults to red).
+$uniapp-alumnes-v1-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$uniapp-alumnes-v1-theme: mat.define-light-theme((
+  color: (
+    primary: $uniapp-alumnes-v1-primary,
+    accent: $uniapp-alumnes-v1-accent,
+    warn: $uniapp-alumnes-v1-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($uniapp-alumnes-v1-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
