@@ -1,0 +1,26 @@
+<mat-toolbar class="topbar mat-elevation-z1" color="primary">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+      <a fxLayout="row" routerLink="/portada" fxLayoutAlign="start center">
+        <!-- Afegim el logo -->
+        <img class="logo-topbar" src="assets/images/logo64.png" height="40">
+  
+        <!-- Fiquem "UniApp Alumnes" en el centre de la topbar-->
+        <h1 class="espai-titol page-title">UniApp</h1> 
+      </a>
+      <!-- Crem div "menu-content", on dins d'això ens trobem amb el nom de l'usuari on quan entris aparegui per pantalla -> Hola (nom user), logo amb la paraula principal del nom on quan cliquis et surti l'opció de tencar sessió-->
+      <a class="menu-content" [matMenuTriggerFor]="accountMenu" fxLayout="row" fxLayoutAlign = "center center">
+        <span class="page-title"  *ngIf="person">Hola {{person.name}}!  </span>
+        <div style="padding: 0px; border-radius: 50%; margin-left: 16px; padding-top: 2px; width: 36px; height: 34px; background: white; color:#26a69a; text-align: center;"> {{letter}} </div>
+
+        <mat-menu #accountMenu="matMenu">
+          <button mat-menu-item (click)="logout()">
+            <mat-icon aria-label="Sign out">exit_to_app</mat-icon>
+            <span>Tancar sessió</span>
+          </button>
+        </mat-menu>
+      </a>
+  
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  

@@ -1,0 +1,7 @@
+<div fxLayout="row wrap" style="margin: 24px 0px 24px 0px" fxLayoutAlign="space-evenly center">
+    <button class="botons-principals" [class.actual] = "paginaActual === 'seguiment'"      [routerLink]="['/seguiment']" mat-flat-button>SEGUIMENT</button>
+    <button class="botons-principals" [class.actual] = "paginaActual === 'planificacio'"   [routerLink]="['/planificacio']" mat-flat-button>PLANIFICACIÓ</button>
+    <button class="botons-principals" [class.actual] = "paginaActual === 'projectes'"      mat-flat-button>PROJECTES</button>
+    <button class="botons-principals" [class.actual] = "paginaActual === 'material'"       mat-flat-button>MATERIAL</button>
+</div>
+  

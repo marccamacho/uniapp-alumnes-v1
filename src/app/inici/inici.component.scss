@@ -1,0 +1,15 @@
+.header-card {
+    border-bottom: solid;
+    border-color: rgba(0, 0, 0, 0.12);
+    border-width: 1px;
+    background-color: whitesmoke;
+    color: #26a69a ;
+    padding: 20px 10px 0px 10px;
+    text-align: center;
+    min-height: 50px;
+}
+
+.card{
+    display:flex;
+    align-items: stretch;
+}

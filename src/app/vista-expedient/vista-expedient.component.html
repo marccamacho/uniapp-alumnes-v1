@@ -1,0 +1,35 @@
+<h1>El meu expedient:</h1>
+<!-- 
+<div *ngFor="let rf of registrationForms">
+  <p *ngIf="rf.term.name != 'Curs 2020-2021'">
+    <button mat-icon-button name="button" (click)="selecciona(rf)"><mat-icon>expand_more</mat-icon></button>
+    {{rf.term.name}} - {{rf.syllabus.name}}
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  </p>
+</div>
+
+<div style="margin-left: 48px;">
+  <mat-accordion >
+    <mat-expansion-panel *ngFor="let c of convocatories">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>{{c.marks[0].value | number: '2.0-0'}}%</b> &nbsp; - {{c.subject.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider style="margin-bottom: 12px;"></mat-divider>
+      <p style="margin-left: 24px;" class="" *ngFor="let w of c.subject.markWeights" [style.background-color]="colorPerStandardGradient(w.standard)">
+        <b *ngIf="w.standard.teacherMarks.length>0">{{textPerNota(w.standard.teacherMarks[0].value)}}</b>
+        <b *ngIf="w.standard.teacherMarks.length==0">{{notaSobre10(w.standard.computedMarks[0].value) | number: '1.1-1'}}</b>
+        --> <!-- ({{w.value}}%) {{w.standard.name}}
+      </p>
+
+      <p *ngIf="c.subject.markWeights.length==0">
+        No s'han descrit els pesos d'aquesta matèria.
+      </p>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div> -->
