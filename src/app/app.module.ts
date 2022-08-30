@@ -31,6 +31,7 @@ import { BotonsPrincipalsComponent }  from './botons-principals/botons-principal
 // Pipes
 import { TruncatePipe }               from './shared/pipes/pipes/max-chars-pipe';
 import { ProjectesComponent } from './projectes/projectes.component';
+import { MaterialComponent } from './material/material.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProjectesComponent } from './projectes/projectes.component';
     IniciComponent,
     BotonsPrincipalsComponent,
     TruncatePipe,
-    ProjectesComponent
+    ProjectesComponent,
+    MaterialComponent
   ],
   imports: [
     HttpClientModule,
