@@ -1,15 +1,31 @@
-.header-card {
-    border-bottom: solid;
-    border-color: rgba(0, 0, 0, 0.12);
-    border-width: 1px;
-    background-color: whitesmoke;
-    color: #26a69a ;
-    padding: 20px 10px 0px 10px;
-    text-align: center;
-    min-height: 50px;
+
+.cercle {
+    width:          16px;
+    height:         16px;
+    border-radius:  50%;
+    background:     #909090;
+    display:        flex;
+    justify-content: center;
+    align-items:    center;
+    text-align:     center;
+    margin:         0px 2px 0px 2px;
+    padding:        2px;
+    color:          white !important;
+    font-size:      12px;
+
 }
 
-.card{
-    display:flex;
-    align-items: stretch;
+.cercle2 {
+    width:          16px;
+    height:         16px;
+    border-radius:  50%;
+    background:     #ffaa8b;
+    display:        flex;
+    justify-content: center;
+    align-items:    center;
+    text-align:     center;
+    margin:         0px 2px 0px 2px;
+    padding:        2px;
+    color:          white !important;
+    font-size:      12px;
 }

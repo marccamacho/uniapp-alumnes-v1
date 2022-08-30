@@ -275,6 +275,10 @@ export class ConnectionService {
     return this.http.get<any>(this.fullApiHost + "/projects?g=" + tagName + "&tId=" + tId, this.httpOptions);
   }
 
+  getMyProjects(){
+    return this.http.get<any>(this.fullApiHost + "/projects?r=student", this.httpOptions);
+  }
+
   getProjectsForPersonFromFavStandards(){
     return this.http.get<any>(this.fullApiHost + "/projects?source=byFav", this.httpOptions);
   }

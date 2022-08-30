@@ -25,20 +25,20 @@ $md-primary: (
   A400 : #31ffda,
   A700 : #18ffd5,
   contrast: (
-      50 : #000000,
-      100 : #000000,
-      200 : #000000,
-      300 : #000000,
+      50 : #616161,
+      100 : #616161,
+      200 : #616161,
+      300 : #616161,
       400 : #ffffff,
       500 : #ffffff,
       600 : #ffffff,
       700 : #ffffff,
       800 : #ffffff,
       900 : #ffffff,
-      A100 : #000000,
-      A200 : #000000,
-      A400 : #000000,
-      A700 : #000000,
+      A100 : #616161,
+      A200 : #616161,
+      A400 : #616161,
+      A700 : #616161,
   )
 );
 
@@ -59,20 +59,20 @@ $md-accent: (
     A400 : #ffeec5,
     A700 : #ffe7ac,
     contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #000000,
-        700 : #000000,
-        800 : #000000,
-        900 : #000000,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
+        50 : #616161,
+        100 : #616161,
+        200 : #616161,
+        300 : #616161,
+        400 : #616161,
+        500 : #616161,
+        600 : #616161,
+        700 : #616161,
+        800 : #616161,
+        900 : #616161,
+        A100 : #616161,
+        A200 : #616161,
+        A400 : #616161,
+        A700 : #616161,
     )
 );
 $uniapp-alumnes-v1-primary: mat.define-palette($md-primary);
@@ -98,5 +98,49 @@ $uniapp-alumnes-v1-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; color: #616161}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.header-card {
+  border-bottom: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-width: 1px;
+  background-color: whitesmoke;
+  color: #26a69a ;
+  padding: 20px 10px 0px 10px;
+  text-align: center;
+  min-height: 50px;
+}
+
+.card{
+  display:flex;
+  align-items: stretch;
+  color: #616161;
+}
+
+.subapartat-titol {
+  font-size: 16px;
+  color: #26a69a;
+  font-weight: 500;
+  border-bottom-width: 1px;
+  border-color: #26a69a;
+}
+
+.without-margin{
+  margin: 0px !important;
+}
+
+.botons-principals{
+  font-weight: 500;
+  min-width: 200px;
+  margin: 8px; 
+  background-color: #9edcd6;
+  color: #026157;
+}
+
+.actual {
+  background-color: #26a69a;
+  color: white;
+
+}

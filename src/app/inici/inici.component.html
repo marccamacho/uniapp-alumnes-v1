@@ -1,1 +1,45 @@
-Inici
+<div fxLayout = "row wrap">
+
+    <mat-card fxLayout="column" class="mat-elevation-z2 card" style="margin: 20px; padding:0px; padding-bottom: 20px; "  fxFlex.lt-lg = "93" fxFlex="35">
+        <mat-card-header fxLayout="row" fxLayoutAlign="center center" class="header-card">
+            <mat-card-title>ÚLTIMS <strong>RESULTATS</strong></mat-card-title>
+        </mat-card-header>
+        
+        <mat-progress-bar mode="query" *ngIf="loading.lastsMarks == true"></mat-progress-bar>
+
+        <mat-card-content fxLayout="column" style="margin-top: 20px; padding: 0px 20px 0px 20px;">
+            <p *ngIf="lastsMarks.length==0">
+            No tens cap nota dels darrers 7 dies.
+            </p>
+            <div *ngFor="let m of lastsMarks"fxLayout="row" [matTooltip]="m['standard']" >
+                <p style="min-width:80px;"> <b>{{notaAText(m['value'])}} </b> </p>
+                <p style="min-width:25px;"> <mat-icon aria-hidden="false" aria-label="Fletxa" fontIcon="arrow_right_alt"> </mat-icon> </p>
+                <p >
+                    &nbsp; &nbsp;   {{m['standard'] | truncate:40}}
+                </p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card fxLayout="column" class="mat-elevation-z2 card" style="margin: 20px; padding:0px; padding-bottom: 20px; " fxFlex.lt-lg = "93" fxFlex="58">
+        <mat-card-header fxLayout="row" fxLayoutAlign="center center" class="header-card">
+            <mat-card-title>PROPERES <strong>TASQUES</strong></mat-card-title>
+        </mat-card-header>
+        
+        <mat-progress-bar mode="query" *ngIf="loading.agenda == true"></mat-progress-bar>
+
+        <mat-card-content fxLayout="column" style="margin-top: 20px; padding: 0px 20px 0px 20px;">
+
+            <div *ngFor="let lA of lastActivities" fxLayout="row" fxLayoutAlign="start start" [matTooltip]="lA['name']">
+                <p style="min-width:100px;"> {{lA['startDt'] | date : 'dd/MM - hh:mm'}}h </p>
+                <p class="cercle2"> F  </p>
+                <p class="cercle"> S  </p>
+                <p >
+                    &nbsp; &nbsp;   {{lA['name'] | truncate:60}}
+                </p>
+            </div>
+        </mat-card-content>
+
+    </mat-card>
+
+</div>
