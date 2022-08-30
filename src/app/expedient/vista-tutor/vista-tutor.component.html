@@ -1,0 +1,38 @@
+<div style="height:24px"> </div>
+<h1> Visió de l'expedient dels teus alumnes </h1>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-around stretch" style="margin-top: 15px;">
+    <mat-card fxLayout="column" class="mat-elevation-z2" style="margin: 20px; padding:20px; {{(equip==null ? 'color:red;' : 'color:green;')}} " fxFlex.lt-md="95" fxFlex="45">
+      <mat-card-header fxLayout="row" fxLayoutAlign="start center" class="header-card">
+        <mat-card-title>Les meves classes</mat-card-title>
+      </mat-card-header>
+      <mat-progress-bar mode="query" *ngIf="loading.equips == true"></mat-progress-bar>
+
+      <mat-card-content fxLayout="column" style="margin-top: 20px;">
+        <mat-chip-list style="margin-bottom: 10px;" fxLayout="row wrap" fxLayoutAlign="center center" aria-label="Stage selection">
+          <mat-chip *ngFor="let t of teamsITeach" class="little-mat-chip" (click)="seleccionaEquip(t)">{{t.name}}</mat-chip>
+        </mat-chip-list>
+
+      </mat-card-content>
+    </mat-card>
+    
+    <mat-card fxLayout="column" class="mat-elevation-z2 card" style="margin: 20px; padding:20px; {{(alumne==null ? 'color:red;' : 'color:green;')}}" fxFlex.lt-md="95" fxFlex="45" *ngIf="membership!=null">
+        <mat-card-header fxLayout="row" fxLayoutAlign="start center" class="header-card">
+            <mat-card-title>{{equip.name}} - {{membership.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-progress-bar mode="query" *ngIf="loading.favorits == true"></mat-progress-bar>
+
+        <mat-card-content fxLayout="column" style="margin-top: 20px;">
+
+            <mat-chip-list style="margin-bottom: 10px;" fxLayoutAlign="center center">
+                <mat-chip *ngFor="let s of membership.members" class="little-mat-chip" (click)="alumne=s">{{s.name}} {{s.firstSurname}}</mat-chip>
+            </mat-chip-list>
+        </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="height:24px"> </div>
+  
+  <app-vista-expedient [person]="alumne" *ngIf="alumne!=null"> </app-vista-expedient>
+
+<!-- <app-notes-alumne-criteri [alumne]="alumne" [standard]="standard" *ngIf="alumne!=null && standard!=null"> </app-notes-alumne-criteri> -->

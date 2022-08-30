@@ -1,0 +1,11 @@
+.advertencia {
+  background-color: red;
+  margin: 20px 20px 20px 20px;
+  text-align: center;
+  padding: 10px;
+
+}
+
+.term-seleccionat {
+  background-color: green;
+}

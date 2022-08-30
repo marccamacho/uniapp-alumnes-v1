@@ -1,0 +1,75 @@
+<div fxLayout = "row wrap">
+
+    <mat-card fxLayout="column" class="mat-elevation-z2 card" style="margin: 20px; padding:0px; padding-bottom: 20px; "  fxFlex.lt-lg = "93" fxFlex="25">
+        <mat-card-header fxLayout="row" fxLayoutAlign="center center" class="header-card">
+            <mat-card-title>ELS MEUS <strong>PROJECTES </strong></mat-card-title>
+        </mat-card-header>
+        
+        <mat-progress-bar mode="query" *ngIf="loading.projectes == true"></mat-progress-bar>
+
+        <mat-card-content *ngIf="loading.projectes == false" fxLayout="column" style="margin-top: 20px; padding: 0px 20px 0px 20px;">
+            <div *ngIf = "projectInStatus(0)">
+                <p class="subapartat-titol without-margin"> Propostes</p>
+                <ul>
+                    <ng-container *ngFor="let p of projectes3F">
+                        <li *ngIf="p['status'] == 0">  {{p['project']['name']}} </li>
+                    </ng-container>
+                </ul>
+            </div>
+
+            <div *ngIf = "projectInStatus(1)">
+                <p class="subapartat-titol without-margin"> Planificació</p>
+                <ul>
+                    <ng-container *ngFor="let p of projectes3F">
+                        <li *ngIf="p['status'] == 1">  {{p['project']['name']}} </li>
+                    </ng-container>
+                </ul>
+            </div>
+
+            <div *ngIf = "projectInStatus(2)">
+                <p class="subapartat-titol without-margin"> Marc Teòric</p>
+                <ul>
+                    <ng-container *ngFor="let p of projectes3F">
+                        <li *ngIf="p['status'] == 2">  {{p['project']['name']}} </li>
+                    </ng-container>
+                </ul>
+            </div>
+
+            <div *ngIf = "projectInStatus(3)">
+                <p class="subapartat-titol without-margin"> Producte Final</p>
+                <ul>
+                    <ng-container *ngFor="let p of projectes3F">
+                        <li *ngIf="p['status'] == 3">  {{p['project']['name']}} </li>
+                    </ng-container>
+                </ul>
+            </div>
+
+            <div *ngIf = "projectInStatus(4)">
+                <p *ngIf = "projectInStatus(4)" class="subapartat-titol without-margin"> Presentació</p>
+                <ul>
+                    <ng-container *ngFor="let p of projectes3F">
+                        <li *ngIf="p['status'] == 4">  {{p['project']['name']}} </li>
+                    </ng-container>
+                </ul>
+            </div>
+
+            <p align="right">
+                <button style="border-color:#26a69a; color: #26a69a" mat-stroked-button>+ NOU PROJECTE</button>
+            </p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card fxLayout="column" class="mat-elevation-z2 card" style="margin: 20px; padding:0px; padding-bottom: 20px; " fxFlex.lt-lg = "93"fxFlex="68">
+        <mat-card-header fxLayout="row" fxLayoutAlign="center center" class="header-card">
+            <mat-card-title>INFORMACIÓ DEL <strong>PROJECTE</strong></mat-card-title>
+        </mat-card-header>
+        
+        <mat-progress-bar mode="query" *ngIf="loading.projecte == true"></mat-progress-bar>
+
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center" style="margin-top: 20px; padding: 0px 20px 0px 20px;">
+            <mat-icon style="font-size: 120px; height: 128px; width:128px; opacity: 0.3;" aria-hidden="false" aria-label="Fletxa" fontIcon="menu_book"> </mat-icon>
+        </mat-card-content>
+
+    </mat-card>
+
+</div>

@@ -1,0 +1,6 @@
+<p class="esdeveniment" [routerLink]="['/unaactivitat',esdeveniment.rid.slice(1)]">
+  <span class="hora">
+    {{esdeveniment.startDt | date : 'HH:mm'}}
+  </span>
+   {{esdeveniment.name}}
+</p>

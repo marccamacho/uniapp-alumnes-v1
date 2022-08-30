@@ -1,0 +1,47 @@
+<p class="advertencia">
+  Aquest mòdul està en fase experimental.
+</p>
+
+<h1 *ngIf="subject">{{subject.name}}</h1>
+  <div style="padding-top: 20px; padding-left: 25px">
+    <mat-chip-list>
+      <mat-chip *ngFor="let t of terms" (click)="getPersonsFromTerm(t)" [ngClass]="{'term-seleccionat': t==selectedTerm}">
+        {{t.name}}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+
+
+<table>
+  <tr>
+    <td>Criteris</td>
+    <td *ngFor="let p of persons">
+      {{p.name}} {{p.firstSurname}}
+    </td>
+
+  </tr>
+
+
+  <tr>
+    <td>Assoliment:</td>
+    <td *ngFor="let p of persons">
+      {{dictPersonesNota[p.rid] | number: '2.0-0'}}%
+    </td>
+
+  </tr>
+  <tr *ngFor="let w of pesos">
+    <td  (click)="avaluarCriteri(w.standard)">{{w.standard.name}} ({{w.value}}%)</td>
+    <td *ngFor="let p of persons">
+      <div *ngIf="matriuNotes[p.rid]!=undefined">
+        <div *ngIf="matriuNotes[p.rid][w.standard.rid]!=undefined">
+      <app-estri-notes
+        [notes]="matriuNotes[p.rid][w.standard.rid]"
+        [criteri]="w.standard"
+        [alumne]="p"></app-estri-notes>
+      </div>
+      </div>
+      <!-- {{notaPerAlumneStandard(p.rid, w.standard.rid)}} -->
+    </td>
+  </tr>
+</table>

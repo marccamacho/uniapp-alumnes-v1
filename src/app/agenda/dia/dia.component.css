@@ -1,0 +1,14 @@
+.dia {
+  width: 95%!important;
+  border-color: #1fb4e7 ;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.data {
+  color: #1fb4e7 ;
+  margin-left: 5px;
+
+}

@@ -1,0 +1,8 @@
+<div class="dia" width="100%" fxLayout="column" fxLayoutAlign="start stretch">
+
+
+  <p class="data">{{dia.dia | date : 'dd-MM'}}</p>
+
+  <app-esdeveniment *ngFor="let a of dia.activitats" [esdeveniment]="a"></app-esdeveniment>
+
+</div>
